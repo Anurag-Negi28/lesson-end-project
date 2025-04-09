@@ -1,0 +1,27 @@
+name: Java CI - Calculator
+
+on:
+  push:
+    paths:
+      - 'Calculator.java'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Compile Calculator.java
+        run: javac Calculator.java
+
+      - name: Run Calculator
+        run: java Calculator
