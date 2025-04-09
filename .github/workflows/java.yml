@@ -1,4 +1,4 @@
-name: Java CI - Calculator
+name: Java CI - Calci
 
 on:
   push:
