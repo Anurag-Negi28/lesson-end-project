@@ -7,14 +7,14 @@ on:
   pull_request:
 
 jobs:
-  build:
+  build-and-run:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up JDK
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
           java-version: '17'
@@ -24,4 +24,6 @@ jobs:
         run: javac Calculator.java
 
       - name: Run Calculator
-        run: java Calculator
+        run: |
+          echo "Running Calculator.java..."
+          java Calculator
